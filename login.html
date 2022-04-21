@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <link rel="stylesheet" href="index.css">
+    <style>
+        h2{
+            text-align: center;
+            margin-top: 10%;
+            margin-bottom: 5%;
+        }
+        form{
+            display: flex;
+            margin: auto;
+            flex-direction: column;
+            height: auto;
+            width: 20%;
+        }
+        form input{
+            margin-bottom: 6%;
+            padding: 1%;
+        }
+        #login{
+            background-color: rgb(2, 86, 86);
+            color: white;
+            padding: 2%;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="navigation">
+        <div><a href="index.html">Home</a></div> 
+        <div><a href="login.html">Login</a></div>
+        <!-- <div> <a href="signup.html">Signup</a></div> -->
+     </div>
+
+    <h2>Login Page</h2>
+    <form>
+        <input type="email" placeholder="Enter Your Email"  id="email" required>
+        <input type="password" placeholder="Enter Your Password" id="password" required>
+        <input type="submit" value="Login" id="login">
+    </form>
+</body>
+
+<script>
+    document.querySelector("form").addEventListener("submit", myFunc);
+
+    let registeredUser = JSON.parse(localStorage.getItem("userData"));
+     function myFunc(){
+         event.preventDefault();
+        
+         let enteredEmail = document.querySelector("#email").value;
+         let enteredPassword = document.querySelector("#password").value;
+
+         registeredUser.forEach(element => {
+             if(element.email == enteredEmail && element.password == enteredPassword){
+                 alert("Login Successful");
+
+                 window.location.href ="index.html"
+             }else{
+                 alert("Invalid Credentials")
+             }
+         });
+     }
+</script>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+
+    <link rel="stylesheet" href="index.css">
+
+    <style>
+        h2{
+            margin-top: 10%;
+            text-align: center;
+            margin-bottom: 6%;
+        }
+
+        form{
+            display: flex;
+            height: auto;
+            width: 25%;
+           margin: auto;
+            flex-direction: column;
+        }
+        form input{
+            margin-bottom: 6%;
+            padding: 1%;
+        }
+        #submit{
+            font-size: 20px;
+            padding: 3%;
+            color: rgb(239, 234, 234);
+            background-color: rgb(4, 91, 91);
+        }
+    </style>
+</head>
+<body>
+    <div id="navigation">
+        <div><a href="index.html">Home</a></div> 
+        <div><a href="login.html">Login</a></div>
+        <div> <a href="signup.html">Signup</a></div>
+     </div>
+
+    <h2>SignUp Page</h2>
+    <form>
+        <input type="text"   placeholder="Enter Name" id="name" required>
+        <input type="number"  placeholder="Enter Mobile Number" id="mobile" required>
+        <input type="email"  placeholder="Enter Email" id="email" required>
+        <input type="password"  placeholder="Enter Password" id="password" required>
+        <input type="submit" Submit id="submit">
+    </form>
+</body>
+<script>
+    document.querySelector("form").addEventListener('submit', myFunction);
+    let userData = JSON.parse(localStorage.getItem("userData")) || [];
+
+    function myFunction(){
+        event.preventDefault();
+
+        var userObj ={
+            name: document.querySelector("#name").value,
+            mobile: document.querySelector("#mobile").value,
+            email: document.querySelector("#email").value,
+            password: document.querySelector("#password").value
+
+        };
+        userData.push(userObj);
+        localStorage.setItem("userData", JSON.stringify(userData));
+        alert("You're registered successfully, Thank You")
+
+        window.location.href = "login.html"
+    }
+</script>
+</html>

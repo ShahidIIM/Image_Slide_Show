@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie App 1</title>
+
+    <link rel="stylesheet" href="index.css">
+
+    
+</head>
+<body>
+    <div id="navigation">
+       <div><a href="index.html">Home</a></div> 
+       <div><a href="login.html">Login</a></div>
+       <div> <a href="signup.html">Signup</a></div>
+    </div>
+
+    <img id="aaa" src="https://images.unsplash.com/photo-1603258339703-9c33e0733e4b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YmVhdXRpZnVsJTIwd29tZW58ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" width="auto" height="650px" name="image" />
+</body>
+
+<script>
+    var image=document.getElementById("aaa");
+var img_array=["https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YmVhdXRpZnVsJTIwd29tZW58ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60", "https://images.unsplash.com/photo-1617077644557-64be144aa306?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YmVhdXRpZnVsJTIwd29tZW58ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60", "https://images.unsplash.com/photo-1622104551503-0d869c6224bf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8YmVhdXRpZnVsJTIwd29tZW58ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60", "https://images.unsplash.com/photo-1621784563286-84f7646ef221?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8YmVhdXRpZnVsJTIwd29tZW58ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60", "https://images.unsplash.com/photo-1610630536483-a56b494c3f7e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGJlYXV0aWZ1bCUyMHdvbWVufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60", "https://images.unsplash.com/photo-1524502397800-2eeaad7c3fe5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fHdvbWFufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"];
+var index=0;
+function slide()
+{
+    image.setAttribute("src",img_array[index]);
+    index++;
+    if(index>=img_array.length)
+    {
+    index=0;
+    }
+}
+setInterval("slide()",2000);
+</script>
+</html>
